@@ -1,0 +1,45 @@
+{
+  "architecture": {
+    "layer_sizes": [
+      784,
+      64,
+      10
+    ],
+    "activations": [
+      "relu",
+      "softmax"
+    ],
+    "weight_inits": [
+      {
+        "type": "normal",
+        "mean": 0.0,
+        "std": 1.0
+      },
+      {
+        "type": "normal",
+        "mean": 0.0,
+        "std": 1.0
+      }
+    ]
+  },
+  "training": {
+    "epochs": 50,
+    "batch_size": 16,
+    "learning_rate": 0.01,
+    "optimizer": "sgd_momentum",
+    "momentum": 0.9,
+    "shuffle": true
+  },
+  "preprocessing": {
+    "standardize": false
+  },
+  "regularization": {
+    "l2_lambda": 0.0001,
+    "early_stopping": false,
+    "patience": 6,
+    "min_delta": 0.0001,
+    "restore_best_weights": true
+  },
+  "loss": "categorical_crossentropy",
+  "seed": 42
+}
